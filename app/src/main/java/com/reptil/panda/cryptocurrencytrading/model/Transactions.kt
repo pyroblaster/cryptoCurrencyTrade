@@ -1,6 +1,5 @@
 package com.reptil.panda.cryptocurrencytrading.model
 
-import java.util.*
 
 
 data class Transactions(
