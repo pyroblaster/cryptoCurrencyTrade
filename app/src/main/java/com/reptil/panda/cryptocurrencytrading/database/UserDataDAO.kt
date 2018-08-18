@@ -9,7 +9,7 @@ import android.arch.persistence.room.Query
 interface UserDataDao {
 
     @Query("SELECT * from userData")
-    fun getAll(): List<UserData>
+    fun getAll(): List<UserData> //uvijek jedan jedini user
 
     @Insert(onConflict = REPLACE)
     fun insert(userData: UserData)

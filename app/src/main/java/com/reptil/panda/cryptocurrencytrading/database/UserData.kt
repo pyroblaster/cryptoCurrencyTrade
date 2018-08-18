@@ -1,11 +1,9 @@
 package com.reptil.panda.cryptocurrencytrading.database
 
-Entity(tableName = "userData")
-data class UserData(@PrimaryKey(autoGenerate = true) var id: Long?,
-                       @ColumnInfo(name = "USD Amount") var currentFiatAmount: Int,
-                       @ColumnInfo(name = "Cryptocurrency Amount") var currentCryptoCurrencyAmount: Double //to bi trebalo vjerovatno array napravit?
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
-
-){
-    constructor():this(null,0,0.0)
-}
+@Entity(tableName = "userData")
+data class UserData(@PrimaryKey(autoGenerate = true) var id: String = "",
+                    @ColumnInfo(name = "USD Amount") var currentFiatAmount: Double = 0.0)

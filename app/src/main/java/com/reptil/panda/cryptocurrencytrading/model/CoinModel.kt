@@ -5,7 +5,7 @@ data class CoinModel(
         var name: String?,
         var symbol: String?,
         var rank: String?,
-        var price: String?,
+        var price: Double?,
         var volume_24h: String?,
         var market_cap: String?,
         var percent_change_1h: String?,
