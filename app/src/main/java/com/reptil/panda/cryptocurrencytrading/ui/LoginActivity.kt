@@ -16,7 +16,6 @@ class LoginActivity : AppCompatActivity() {
         if (users.isEmpty()) {
             userDao.insert(userData = UserData(UUID.randomUUID().toString(), 10000.0))
 
-        }
-        //IDI NA MAIN
+        }        //IDI NA MAIN
     }
 }
