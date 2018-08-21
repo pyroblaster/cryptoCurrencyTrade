@@ -5,6 +5,6 @@ import retrofit2.Callback;
 
 interface ApiInteractor {
 
-    fun getCoins(callback: Callback<CoinModel>, city: String)
+    fun getCoins(callback: Callback<CoinModel>, id: String)
 
 }
