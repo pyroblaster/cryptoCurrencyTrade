@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.reptil.panda.cryptocurrencytrading.R
 import com.reptil.panda.cryptocurrencytrading.model.CoinModel
-import com.reptil.panda.cryptocurrencytrading.ui.CoinModelAdapter
+import com.reptil.panda.cryptocurrencytrading.ui.adapter.CoinModelAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {

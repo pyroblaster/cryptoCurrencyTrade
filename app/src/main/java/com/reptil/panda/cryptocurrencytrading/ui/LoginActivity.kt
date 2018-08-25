@@ -1,7 +1,9 @@
 package com.reptil.panda.cryptocurrencytrading.ui
 
 import android.content.Intent
+import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 
 import com.reptil.panda.cryptocurrencytrading.MainActivity
 import com.reptil.panda.cryptocurrencytrading.database.Database
@@ -13,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
+
     fun doStuff() {
         val userDao = Database.getUserDao()
 
@@ -20,18 +23,12 @@ class LoginActivity : AppCompatActivity() {
 
         if (users.isEmpty()) {
             userDao.insert(userData = UserData(UUID.randomUUID().toString(), 10000.0))
-
-            val intent = Intent(this, MainActivity::class.java)
-
-            startActivity(intent)
         }
 
-        if (users.isNotEmpty()){
-
-            val intent = Intent(this, MainActivity::class.java)
-
-            startActivity(intent)
-        }
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
 
     }
+
 }
+

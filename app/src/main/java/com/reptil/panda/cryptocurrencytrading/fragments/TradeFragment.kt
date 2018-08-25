@@ -25,7 +25,7 @@ class TradeFragment : Fragment() {
         val newPurchase = CoinPurchaseData(coinId = coinModel.id,
                 userId = "trenutni user",
                 amount = 505.0, //read this from an input field
-                currentPrice = coinModel.price ?: 0.0,
+                currentPrice = coinModel.priceUsd?.toDouble() ?: 0.0,
                 timestamp = System.currentTimeMillis()
         )
 
