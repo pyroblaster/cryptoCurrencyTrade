@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.reptil.panda.cryptocurrencytrading.R
 import com.reptil.panda.cryptocurrencytrading.model.CoinModel
 import com.reptil.panda.cryptocurrencytrading.ui.adapter.CoinModelAdapter
+import com.reptil.panda.cryptocurrencytrading.ui.view.CoinModelViewHolder
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -28,6 +29,7 @@ class HomeFragment : Fragment() {
         coin_recycler_view.layoutManager = LinearLayoutManager(activity)
 
         val items = listOf<CoinModel>()
+
         adapter.setData(items) //podaci koje dobijes s neta
     }
 

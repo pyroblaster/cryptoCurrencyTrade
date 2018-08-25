@@ -21,12 +21,18 @@ class LoginActivity : AppCompatActivity() {
 
         val users = userDao.getAll()
 
+        val intent = Intent(this, MainActivity::class.java)
+
         if (users.isEmpty()) {
             userDao.insert(userData = UserData(UUID.randomUUID().toString(), 10000.0))
+            startActivity(intent)
+        }
+        else{
+            startActivity(intent)
         }
 
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+
+
 
     }
 
