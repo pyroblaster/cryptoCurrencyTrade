@@ -10,6 +10,7 @@ import com.reptil.panda.cryptocurrencytrading.R
 import com.reptil.panda.cryptocurrencytrading.database.CoinPurchaseData
 import com.reptil.panda.cryptocurrencytrading.database.Database
 import com.reptil.panda.cryptocurrencytrading.model.CoinModel
+import kotlinx.android.synthetic.main.fragment_trade.*
 
 class TradeFragment : Fragment() {
 
@@ -19,6 +20,22 @@ class TradeFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         return inflater.inflate(R.layout.fragment_portfolio, container, false)
+
+
+        val coin = coinName.text.toString()
+        val amount = tradeAmount.text.toDouble()
+        val tradePrice = tradePrice.text.toString()
+
+        buyButton.setOnClickListener {
+
+
+        }
+
+        sellButton.setOnClickListener{
+
+        }
+
+
     }
 
     private fun buyCoin(coinModel: CoinModel) {
@@ -41,4 +58,7 @@ class TradeFragment : Fragment() {
         fun newInstance(): TradeFragment = TradeFragment()
 
     }
+
+
+
 }
