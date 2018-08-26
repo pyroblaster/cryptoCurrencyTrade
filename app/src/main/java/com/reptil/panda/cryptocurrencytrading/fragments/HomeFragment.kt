@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.reptil.panda.cryptocurrencytrading.R
 import com.reptil.panda.cryptocurrencytrading.model.CoinModel
+import com.reptil.panda.cryptocurrencytrading.network.RetrofitUtil
 import com.reptil.panda.cryptocurrencytrading.ui.adapter.CoinModelAdapter
 import com.reptil.panda.cryptocurrencytrading.ui.view.CoinModelViewHolder
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -33,6 +36,14 @@ class HomeFragment : Fragment() {
         adapter.setData(items) //podaci koje dobijes s neta
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        RetrofitUtil.apiService.getCoinData()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(adapter::setData, Throwable::printStackTrace)
+    }
 
     companion object {
         fun newInstance(): HomeFragment = HomeFragment()

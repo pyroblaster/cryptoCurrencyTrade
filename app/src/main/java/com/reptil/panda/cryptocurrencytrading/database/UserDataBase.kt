@@ -11,23 +11,4 @@ abstract class UserDataBase : RoomDatabase() {
     abstract fun userDataDao(): UserDataDao
 
     abstract fun coinDataDao(): CoinDataDao
-
-    companion object {
-        private var INSTANCE: UserDataBase? = null
-
-        fun getInstance(context: Context): UserDataBase? {
-            if (INSTANCE == null) {
-                synchronized(UserDataBase::class) {
-                    INSTANCE = Room.databaseBuilder(context.applicationContext,
-                            UserDataBase::class.java, "user.db")
-                            .build()
-                }
-            }
-            return INSTANCE
-        }
-
-        fun destroyInstance() {
-            INSTANCE = null
-        }
-    }
 }

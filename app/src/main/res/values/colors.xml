@@ -5,4 +5,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorTextIconBar">#2a67a1</color>
+
+    <color name="positive">#32CD32</color>
+    <color name="negative">#FF0000</color>
+
 </resources>

@@ -10,8 +10,8 @@ object Database {
     private fun initDatabase(): UserDataBase {
         return Room.databaseBuilder(App.instance,
                 UserDataBase::class.java, "user.db")
+                .allowMainThreadQueries()
                 .build()
-
     }
 
     fun getUserDao() = database.userDataDao()

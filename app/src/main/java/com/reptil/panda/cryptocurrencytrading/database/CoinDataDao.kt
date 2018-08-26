@@ -10,7 +10,10 @@ import android.arch.persistence.room.Query
 interface CoinDataDao {
 
     @Query("SELECT * from coinData where userId = :userId")
-    fun getCoinsForUser(userId: String): List<CoinPurchaseData>
+    fun getCoinsForUser(userId: Long): List<CoinPurchaseData>
+
+    @Query("SELECT * from coinData")
+    fun getAll(): List<CoinPurchaseData>
 
     @Insert(onConflict = REPLACE)
     fun storePurchase(coinPurchaseData: CoinPurchaseData)

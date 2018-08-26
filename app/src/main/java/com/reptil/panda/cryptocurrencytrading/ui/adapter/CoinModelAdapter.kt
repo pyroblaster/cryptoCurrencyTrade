@@ -39,23 +39,7 @@ class CoinModelAdapter : RecyclerView.Adapter<CoinModelViewHolder>() {
         item.twentyFourChange.text = coinModel.percent_change_24h + "%"
         item.sevenDayChange.text = coinModel.percent_change_7d + "%"
 
-        item.oneHourChange.setTextColor(if (coinModel.percent_change_1h!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
 
-        item.twentyFourChange.setTextColor(if (coinModel.percent_change_24h!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
-
-        item.sevenDayChange.setTextColor(if (coinModel.percent_change_7d!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinModelViewHolder {

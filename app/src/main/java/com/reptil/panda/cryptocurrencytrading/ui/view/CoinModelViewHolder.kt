@@ -30,7 +30,8 @@ class CoinModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         this.coinModel = coinModel
         setItem()
     }
-    fun setActivity(activity: Activity){
+
+    fun setActivity(activity: Activity) {
         this.activity = activity
     }
 
@@ -45,11 +46,7 @@ class CoinModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         twentyFourChange.text = coinModel.percent_change_24h + "%"
         sevenDayChange.text = coinModel.percent_change_7d + "%"
 
-        oneHourChange.setTextColor(if (coinModel.percent_change_1h!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
+        oneHourChange.setTextColor(itemView.resources.getColor(if (coinModel.percent_change_1h?.contains("-") == true) R.color.negative else R.color.positive))
 
         twentyFourChange.setTextColor(if (coinModel.percent_change_24h!!.contains("-"))
             Color.parseColor("#FF0000")
