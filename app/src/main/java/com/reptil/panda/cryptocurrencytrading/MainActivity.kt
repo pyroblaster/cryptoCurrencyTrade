@@ -1,5 +1,6 @@
 package com.reptil.panda.cryptocurrencytrading
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -36,9 +37,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+
+        val homeFragment = HomeFragment.newInstance()
+        openFragment(homeFragment)
     }
+
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)

@@ -66,7 +66,6 @@ class TradeFragment : Fragment() {
 
     private fun onCoinReceived(coinData: List<CoinModel?>?) {
         val coin = coinData?.getOrNull(0)
-
         coin?.run {
             currentCoin = coin
             tradePrice.text = priceUsd
@@ -78,14 +77,15 @@ class TradeFragment : Fragment() {
         val amount = tradeAmount.text.toString().toDouble()
         val tradePrice = tradePrice.text.toString()
 
-        currentCoin = CoinModel().apply {
-            id = "bitcoin"
-            priceUsd = "205.0 "
-        }
-
+        /*  currentCoin = CoinModel().apply {
+              id = "bitcoin"
+              priceUsd = "205.0 "
+          }
+       */
         if (!tradePrice.isBlank()) {
             val user = userDao.getAll().first()
             val totalCost = tradePrice.toDouble() * amount
+
 
             if (user.currentFiatAmount > totalCost) {
                 user.currentFiatAmount = user.currentFiatAmount - totalCost

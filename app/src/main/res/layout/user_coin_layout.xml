@@ -52,7 +52,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/section_marketCap"
+                android:id="@+id/section_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/section_name"
@@ -63,12 +63,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="4dp"
-                    android:text="Market Cap:"
+                    android:text="Amount:"
                     android:textColor="@color/colorPrimary" />
 
 
                 <TextView
-                    android:id="@+id/marketCap"
+                    android:id="@+id/amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -81,7 +81,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/section_price"
+                android:id="@+id/section_worth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -89,7 +89,7 @@
 
 
                 <TextView
-                    android:id="@+id/priceUsd"
+                    android:id="@+id/worth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -97,6 +97,11 @@
                     android:layout_marginRight="16dp"
                     android:text="10,000"
                     android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="$"/>
 
 
             </LinearLayout>
@@ -105,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@id/section_marketCap"
+                android:layout_below="@id/section_amount"
                 android:orientation="horizontal">
 
                 <TextView
@@ -113,12 +118,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1h:"
+                    android:text="Timestamp:"
                     android:textColor="@color/colorPrimary" />
 
 
                 <TextView
-                    android:id="@+id/oneHour"
+                    android:id="@+id/timestamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -127,43 +132,7 @@
                     android:text=""
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="24h:"
-                    android:textColor="@color/colorPrimary" />
 
-
-                <TextView
-                    android:id="@+id/twentyFourHour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text=""
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="6dp"
-                    android:text="7d:"
-                    android:textColor="@color/colorPrimary" />
-
-
-                <TextView
-                    android:id="@+id/sevenDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text=""
-                    android:textStyle="bold" />
 
             </LinearLayout>
 

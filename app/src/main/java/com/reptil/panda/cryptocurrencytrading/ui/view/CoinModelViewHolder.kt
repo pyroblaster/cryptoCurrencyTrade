@@ -46,22 +46,11 @@ class CoinModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         twentyFourChange.text = coinModel.percent_change_24h + "%"
         sevenDayChange.text = coinModel.percent_change_7d + "%"
 
-        oneHourChange.setTextColor(itemView.resources.getColor(if (coinModel.percent_change_1h?.contains("-") == true) R.color.negative else R.color.positive))
+ /*       oneHourChange.setTextColor(itemView.resources.getColor(if (coinModel.percent_change_1h?.contains("-") == true) R.color.negative else R.color.positive))
+        twentyFourChange.setTextColor(itemView.resources.getColor(if (coinModel.percent_change_24h?.contains("-") == true) R.color.negative else R.color.positive))
+        sevenDayChange.setTextColor(itemView.resources.getColor(if (coinModel.percent_change_7d?.contains("-") == true) R.color.negative else R.color.positive))
+*/
 
-        twentyFourChange.setTextColor(if (coinModel.percent_change_24h!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
-
-        //STAVI VRIJEDOST 2 AKO JE NULL CAO
-
-
-        sevenDayChange.setTextColor(if (coinModel.percent_change_7d!!.contains("-"))
-            Color.parseColor("#FF0000")
-        else
-            Color.parseColor("#32CD32")
-        )
 
     }
 
