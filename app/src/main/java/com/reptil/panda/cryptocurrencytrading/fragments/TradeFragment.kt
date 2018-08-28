@@ -1,6 +1,7 @@
 package com.reptil.panda.cryptocurrencytrading.fragments
 
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Editable
@@ -8,6 +9,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.reptil.panda.cryptocurrencytrading.R
@@ -87,11 +89,18 @@ class TradeFragment : Fragment() {
             val totalCost = tradePrice.toDouble() * amount
 
 
-            if (user.currentFiatAmount > totalCost) {
+            if (user.currentFiatAmount >= totalCost) {
                 user.currentFiatAmount = user.currentFiatAmount - totalCost
                 userDao.insert(user)
 
                 currentCoin?.run { buyCoin(this, amount, coin) }
+
+                Toast.makeText(this.activity, "Success!",
+                        Toast.LENGTH_SHORT).show()
+            }
+            if (user.currentFiatAmount < totalCost){
+                Toast.makeText(this.activity, "Failure!",
+                        Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -129,9 +138,18 @@ class TradeFragment : Fragment() {
                 myCoin.amount -= amount
 
                 coinDataDao.storePurchase(myCoin)
+
+                Toast.makeText(this.activity, "Success!",
+                        Toast.LENGTH_SHORT).show()
+            }
+            if (myCoin.amount < amount){
+                Toast.makeText(this.activity, "Failure!",
+                        Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+
 
     companion object {
         fun newInstance(): TradeFragment = TradeFragment()
